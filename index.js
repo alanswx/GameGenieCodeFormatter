@@ -16,7 +16,7 @@ fs.createReadStream('nes.csv')
   .on('data', (row) => {
 
    // temporarily filter just Super Mario Bros. 
-   if (row["Game"]=="Super Mario Bros.")
+   if (row["Game"]=="Super Mario Bros." || row["Game"]=="1942")
    {
       // some rows are blank, or just have comments. Usually the Effect field is blank
       if (row["Effect"].length<=0)
@@ -45,7 +45,7 @@ fs.createReadStream('nes.csv')
         //RawCode { value: 243, address: 12344, compare: 65 }
         var data = new Uint32Array(4);
         //1'b enable, 1'b compare, 000000 , address, compare, replace
-    	data[0]=0;
+    	data[0]=result.hasCompare?0x0001:0x0000;
     	data[1]=result.address;
 	data[2]=result.compare;
 	data[3]=result.value;

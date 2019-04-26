@@ -68,6 +68,7 @@ module.exports = {
         this.value = 0;
         this.address = 0;
         this.compare = 0;
+        this.hasCompare = 0;
     }
     
     RawCode.prototype.hasCompare = function() {
@@ -155,6 +156,9 @@ module.exports = {
             
             if (code.length == 6) {
                 bitString <<= 8;
+            }
+            else {
+                rawCode.hasCompare=1;
             }
             
             rawCode.value = ((bitString >> 28) & 0x8) |
