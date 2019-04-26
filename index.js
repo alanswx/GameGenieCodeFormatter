@@ -16,7 +16,7 @@ fs.createReadStream('nes.csv')
   .on('data', (row) => {
 
    // temporarily filter just Super Mario Bros. 
-   if (row["Game"]=="Super Mario Bros." || row["Game"]=="1942")
+   if (true || row["Game"]=="Super Mario Bros." || row["Game"]=="1942")
    {
       // some rows are blank, or just have comments. Usually the Effect field is blank
       if (row["Effect"].length<=0)
