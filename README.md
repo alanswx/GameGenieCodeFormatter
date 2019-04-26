@@ -18,13 +18,22 @@ Format:
 ```
 ```
   00 00 00 00 : no compare (bit 1 is 1 if compare)
-  89 10 00 00 : 0x1089 is the address
-  00 00 00 00 : 0x0000 is the compare (not present)
-  5F 00 00 00 : 0x005F is the data
+  89 10 00 00 : 0x00001089 is the address
+  00 00 00 00 : 0x00000000 is the compare (not present)
+  5F 00 00 00 : 0x0000005F is the data
 
   The next bytes are more codes, for multi codes
 ```
 
+```
+   01 00 00 00 de 37 00 00 02 00 00 00 05 00 00 00
+```
+```
+   01 00 00 00 : compare (bit 1 is 1)
+   de 37 00 00 : 0x000037de is the address
+   02 00 00 00 : 0x00000002 is the compare
+   05 00 00 00 : 0x00000005 is the data
+```
 ## Useful links
 
 http://games.technoplaza.net/
