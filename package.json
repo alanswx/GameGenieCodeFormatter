@@ -1,0 +1,15 @@
+{
+  "name": "gamegenie_mister",
+  "version": "1.0.0",
+  "description": "Create binary game genie files",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "zip": "zip -r  nesgg.zip nesgg"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.2.0"
+  }
+}
