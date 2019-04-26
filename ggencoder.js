@@ -103,6 +103,7 @@ module.exports = {
             var temp = (hex[6] << 4) | hex[8];
             temp = (temp >> 2) | ((temp << 6) & 0xFC);
             rawCode.compare = (temp ^ 0xBA);
+            rawCode.hasCompare=1;
         }
         
         return rawCode;
@@ -192,6 +193,7 @@ module.exports = {
             
             if (code.length == 8) {
                 rawCode.compare = ((bitString & 0x80) >> 4) | (bitString & 0x7);
+                rawCode.hasCompare=1;
                 
                 temp = ((bitString & 0x800) >> 8) | ((bitString & 0x70) >> 4);
                 rawCode.compare <<= 4;
